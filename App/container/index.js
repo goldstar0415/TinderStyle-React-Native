@@ -23,7 +23,7 @@ export default class Index extends Component {
   render() {
     return (
       <View
-       style={{flex:1}}
+       style={{flex:1}}>
       <Provider store={store}>
         <Components/>
       </Provider>
