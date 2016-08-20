@@ -16,6 +16,7 @@ import {
 import Nav from './global-widgets/nav'
 import SwipeCards from 'react-native-swipe-cards';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import Iconz from 'react-native-vector-icons/Ionicons';
 
 var image1 = require('../images/image1.jpeg')
 var image2 = require('../images/image2.jpeg')
@@ -118,9 +119,15 @@ export default class Index extends Component {
 
         handleYup={this.handleYup}
         handleNope={this.handleNope} />
-        <View>
-        <TouchableOpacity style = {{width:50, height:50, borderWidth:10, borderColor:'#e7e7e7', borderRadius:25}}>
-
+        <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
+        <TouchableOpacity style = {styles.buttons}>
+        <Iconz name='ios-close' size={45} color="#888" style={{}} />
+        </TouchableOpacity>
+        <TouchableOpacity style = {styles.buttonSmall}>
+        <Iconz name='ios-information' size={25} color="#888" style={{}} />
+        </TouchableOpacity>
+        <TouchableOpacity style = {styles.buttons}>
+        <Iconz name='ios-heart-outline' size={36} color="#888" style={{marginTop:5}} />
         </TouchableOpacity>
         </View>
         </View>
@@ -134,6 +141,24 @@ const styles = StyleSheet.create({
     flex: 1,
 
     backgroundColor: '#f7f7f7',
+  },
+  buttons:{
+    width:80, 
+    height:80, 
+    borderWidth:10, 
+    borderColor:'#e7e7e7', 
+    justifyContent:'center', 
+    alignItems:'center',
+    borderRadius:40
+  },
+  buttonSmall:{
+    width:50, 
+    height:50, 
+    borderWidth:10, 
+    borderColor:'#e7e7e7', 
+    justifyContent:'center', 
+    alignItems:'center',
+    borderRadius:25
   },
    card: {
     flex: 1,
