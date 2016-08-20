@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
 
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#f7f7f7',
   },
   welcome: {
     fontSize: 20,
