@@ -52,14 +52,17 @@ export default class Index extends Component {
   }
   render() {
     return (
+      <View style={styles.container}>
+      <Nav />
       <SwipeCards
         cards={this.state.cards}
-
+        containerStyle = {{  backgroundColor: '#f7f7f7', alignItems:'center', margin:20}}
         renderCard={(cardData) => this.Card(cardData)}
         renderNoMoreCards={() => this.noMore()}
 
         handleYup={this.handleYup}
         handleNope={this.handleNope} />
+        </View>
     )
 }
 }
