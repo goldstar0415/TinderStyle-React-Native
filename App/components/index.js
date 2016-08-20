@@ -107,26 +107,35 @@ export default class Index extends Component {
       </View>
     )
   }
+
+  yup(){
+    console.log(this.refs['swiper'])
+this.refs['swiper']._goToNextCard()  }
+
+nope(){
+    console.log(this.refs['swiper'])
+this.refs['swiper']._goToNextCard()  }
+
   render() {
     return (
       <View style={styles.container}>
       <Nav />
       <SwipeCards
+        ref = {'swiper'}
         cards={this.state.cards}
         containerStyle = {{  backgroundColor: '#f7f7f7', alignItems:'center', margin:20}}
         renderCard={(cardData) => this.Card(cardData)}
         renderNoMoreCards={() => this.noMore()}
-
         handleYup={this.handleYup}
         handleNope={this.handleNope} />
         <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-        <TouchableOpacity style = {styles.buttons}>
+        <TouchableOpacity style = {styles.buttons} onPress = {() => this.nope()}>
         <Iconz name='ios-close' size={45} color="#888" style={{}} />
         </TouchableOpacity>
         <TouchableOpacity style = {styles.buttonSmall}>
         <Iconz name='ios-information' size={25} color="#888" style={{}} />
         </TouchableOpacity>
-        <TouchableOpacity style = {styles.buttons}>
+        <TouchableOpacity style = {styles.buttons} onPress = {() => this.yup()}>
         <Iconz name='ios-heart-outline' size={36} color="#888" style={{marginTop:5}} />
         </TouchableOpacity>
         </View>
