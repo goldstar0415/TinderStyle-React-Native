@@ -43,13 +43,20 @@ export default class Index extends Component {
   handleNope (card) {
     console.log(`Nope for ${card.text}`)
   }
+  noMore(){
+    return (
+      <View style={styles.card} >
+        <Text>No More Cards</Text>
+      </View>
+    )
+  }
   render() {
     return (
       <SwipeCards
         cards={this.state.cards}
 
         renderCard={(cardData) => this.Card(cardData)}
-        renderNoMoreCards={() => <NoMoreCards />}
+        renderNoMoreCards={() => this.noMore()}
 
         handleYup={this.handleYup}
         handleNope={this.handleNope} />
