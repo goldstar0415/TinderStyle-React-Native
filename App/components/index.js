@@ -10,10 +10,12 @@ import {
   StyleSheet,
   Image,
   Text,
+  TouchableOpacity,
   View
 } from 'react-native';
 import Nav from './global-widgets/nav'
 import SwipeCards from 'react-native-swipe-cards';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 var image1 = require('../images/image1.jpeg')
 var image2 = require('../images/image2.jpeg')
@@ -76,7 +78,17 @@ export default class Index extends Component {
   Card(x){
     return (
       <View style={styles.card}>
-        <Image source ={image1} resizeMode="contain" style ={{width:350, height:350}} />
+        <Image source ={x.image} resizeMode="contain" style ={{width:350, height:350}} />
+        <View style={{width:350, height:70, flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
+        <View style={{flexDirection:'row', margin:15, marginTop:25,}} >
+        <Text style={{fontSize:20, fontWeight:'300', color:'#444'}}>{x.first_name}, </Text>
+        <Text style={{fontSize:21, fontWeight:'200', color:'#444'}}>{x.age}</Text>
+        </View>
+        <View style={{flexDirection:'row'}}>
+        <View style={{padding:13,  borderLeftWidth:1,borderColor:'#e3e3e3', alignItems:'center', justifyContent:'space-between'}}><Icon name='people-outline' size={20} color="#777" style={{}} /><Text style={{fontSize:16, fontWeight:'200', color:'#555'}}>{x.friends}</Text></View>
+        <View style={{padding:13, borderLeftWidth:1,borderColor:'#e3e3e3', alignItems:'center', justifyContent:'space-between'}}><Icon name='import-contacts' size={20} color="#777" /><Text style={{fontSize:16, fontWeight:'200', color:'#555'}}>{x.interests}</Text></View>
+        </View>
+        </View>
       </View>
     )
   }
@@ -106,10 +118,16 @@ export default class Index extends Component {
 
         handleYup={this.handleYup}
         handleNope={this.handleNope} />
+        <View>
+        <TouchableOpacity style = {{width:50, height:50, borderWidth:10, borderColor:'#e7e7e7', borderRadius:25}}>
+
+        </TouchableOpacity>
+        </View>
         </View>
     )
 }
 }
+//onPress = {() => this.renderNope()} 
 
 const styles = StyleSheet.create({
   container: {
@@ -124,7 +142,7 @@ const styles = StyleSheet.create({
     borderWidth:2,
     borderColor:'#e3e3e3',
     width: 350,
-    height: 400,
+    height: 420,
   }
  
 });
