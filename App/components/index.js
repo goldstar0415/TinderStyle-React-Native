@@ -12,25 +12,49 @@ import {
   View
 } from 'react-native';
 import Nav from './global-widgets/nav'
+import SwipeCards from 'react-native-swipe-cards';
+const Cards = [
+  {text: 'Tomato', backgroundColor: 'red'},
+  {text: 'Aubergine', backgroundColor: 'purple'},
+  {text: 'Courgette', backgroundColor: 'green'},
+  {text: 'Blueberry', backgroundColor: 'blue'},
+  {text: 'Umm...', backgroundColor: 'cyan'},
+  {text: 'orange', backgroundColor: 'orange'},
+]
 
 export default class Index extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      cards: Cards
+    }
+  }
+  Card(x){
+    return (
+      <View style={[styles.card, {backgroundColor: x.backgroundColor}]}>
+        <Text>{x.text}</Text>
+      </View>
+    )
+  }
+    handleYup (card) {
+    console.log(`Yup for ${card.text}`)
+  }
+
+  handleNope (card) {
+    console.log(`Nope for ${card.text}`)
+  }
   render() {
     return (
-      <View style={styles.container}>
-      <Nav />
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
+      <SwipeCards
+        cards={this.state.cards}
+
+        renderCard={(cardData) => this.Card(cardData)}
+        renderNoMoreCards={() => <NoMoreCards />}
+
+        handleYup={this.handleYup}
+        handleNope={this.handleNope} />
+    )
+}
 }
 
 const styles = StyleSheet.create({
@@ -39,14 +63,12 @@ const styles = StyleSheet.create({
 
     backgroundColor: '#f7f7f7',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+   card: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 300,
+    height: 300,
+  }
+ 
 });
