@@ -80,7 +80,6 @@ export default class Home extends Component {
   Card(x){
     return (
       <View style={styles.card}>
-      <Nav />
         <Image source ={x.image} resizeMode="contain" style ={{width:350, height:350}} />
         <View style={{width:350, height:70, flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
         <View style={{flexDirection:'row', margin:15, marginTop:25,}} >
@@ -121,6 +120,7 @@ this.refs['swiper']._goToNextCard()  }
   render() {
     return (
       <View style={styles.container}>
+           <Nav />
       <SwipeCards
         ref = {'swiper'}
         cards={this.state.cards}

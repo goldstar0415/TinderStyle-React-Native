@@ -143,10 +143,10 @@ export default class Messages extends Component {
   
   eachPic(x){
     return(
-      <View style={{alignItems:'center'}}>
+      <TouchableOpacity style={{alignItems:'center'}}>
       <Image source = {x.image} style={{width:70, height:70, borderRadius:35, margin:10}} />
       <Text style={{fontWeight:'600', color:'#444'}}>{x.first_name}</Text>
-      </View>
+      </TouchableOpacity>
       )}
 
     convoRender(x){
@@ -164,13 +164,15 @@ export default class Messages extends Component {
    
   render() {
     return (
+      <View style = {{flex:1}}>
+      <Nav type = 'message' onPress = {() => this.props.navigator.replace({id:'home'})} />
       <ScrollView style={styles.container}>
       <TextInput 
       style = {{height:50, }}
       placeholder="Search"
       />
       <View style={styles.matches}>
-      <Text style = {{color:'#da533c', fontWeight:'600', fontSize:12}}>PARTY'S BUZZING WITH BAD BITCHES</Text>
+      <Text style = {{color:'#da533c', fontWeight:'600', fontSize:12}}>THIS PARTY'S BUZZING WITH BAD BITCHES</Text>
       <ListView 
       horizontal={true}
       showsHorizontalScrollIndicator = {false}
@@ -192,6 +194,7 @@ export default class Messages extends Component {
       </View>
      
         </ScrollView>
+        </View>
     )
 }
 }
