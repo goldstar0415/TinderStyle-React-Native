@@ -21,7 +21,6 @@ import Nav from './global-widgets/nav'
 import SwipeCards from 'react-native-swipe-cards';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Iconz from 'react-native-vector-icons/Ionicons';
-import Nav from './global-widgets/nav'
 
 var image1 = require('../images/image1.jpeg')
 var image2 = require('../images/image2.jpeg')
