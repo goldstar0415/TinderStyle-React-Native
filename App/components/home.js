@@ -69,7 +69,7 @@ const Cards = [{
   "image": image6
 }]
 
-export default class Index extends Component {
+export default class Home extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -119,7 +119,6 @@ this.refs['swiper']._goToNextCard()  }
   render() {
     return (
       <View style={styles.container}>
-      <Nav />
       <SwipeCards
         ref = {'swiper'}
         cards={this.state.cards}
