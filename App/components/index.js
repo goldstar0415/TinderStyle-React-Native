@@ -16,6 +16,11 @@ import {
 } from 'react-native';
 import Nav from './global-widgets/nav'
 import Home from './home';
+import Messages from './messages';
+
+
+
+
 
 export default class Index extends Component {
   constructor(props){
@@ -36,6 +41,15 @@ export default class Index extends Component {
         navigator={navigator} />
         );
     }
+    if (routeId === 'messages') {
+      return (
+        <Messages
+        {...this.props} 
+        userData ={route.userData}
+        close = {() => this.closeControlPanel()}
+        navigator={navigator} />
+        );
+    }
   }
 
 
@@ -46,7 +60,7 @@ export default class Index extends Component {
      <Navigator
      style={{flex: 1}}
      ref={'NAV'}
-     initialRoute={{id: 'home', name: 'home'}}
+     initialRoute={{id: 'messages', name: 'messages'}}
      renderScene={this.renderScene.bind(this)}/>
         </View>
     )
