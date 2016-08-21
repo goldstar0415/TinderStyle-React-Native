@@ -14,7 +14,7 @@ import {
   Navigator,
   View
 } from 'react-native';
-import Nav from './global-widgets/nav'
+
 import Home from './home';
 import Messages from './messages';
 
@@ -56,7 +56,6 @@ export default class Index extends Component {
   render() {
     return (
       <View style={{flex:1}}>
-      <Nav />
      <Navigator
      style={{flex: 1}}
      ref={'NAV'}

@@ -18,6 +18,7 @@ import SwipeCards from 'react-native-swipe-cards';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Iconz from 'react-native-vector-icons/Ionicons';
 
+
 var image1 = require('../images/image1.jpeg')
 var image2 = require('../images/image2.jpeg')
 var image3 = require('../images/image3.jpeg')
@@ -79,6 +80,7 @@ export default class Home extends Component {
   Card(x){
     return (
       <View style={styles.card}>
+      <Nav />
         <Image source ={x.image} resizeMode="contain" style ={{width:350, height:350}} />
         <View style={{width:350, height:70, flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
         <View style={{flexDirection:'row', margin:15, marginTop:25,}} >
