@@ -21,12 +21,24 @@ export default class Nav extends Component {
   home(){
     return (
       <View  style={styles.container}>
-      <Iconz name="ios-settings" color ="#888" size={20} style={{margin:10}} />
+      <Iconz name="ios-person" color ="#888" size={25} style={{margin:10}} />
       <Image source ={require('../../images/logo.png')} resizeMode = "contain" style={{width:100, height:30}} />
       <Iconz name="ios-chatboxes-outline" color ="#555" size={25} style={{margin:10}} />
       </View>
     );
   }
+  profile(){
+    return (
+      <View  style={styles.container}>
+      <View style = {{width:25, height:25, margin:10}}/>
+      <Image source ={require('../../images/logo.png')} resizeMode = "contain" style={{width:100, height:30}} />
+     <TouchableOpacity onPress ={this.props.onPress}>
+      <Image source = {require('../../images/tinder.png')} style = {{width:25, height:25, margin:10}}/>
+      </TouchableOpacity>
+      </View>
+    );
+  }
+
     message(){
     return (
       <View  style={styles.container}>
@@ -43,6 +55,11 @@ export default class Nav extends Component {
         return (
           <View>{this.message()}</View>
         );}
+        else if (this.props.type == "profile"){
+          return (
+          <View>{this.profile()}</View>
+        );
+        }
         else{
         return (
           <View>{this.home()}</View>

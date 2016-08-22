@@ -37,7 +37,7 @@ export default class Profile extends Component {
   render() {
     return (
       <View style={{flex:1}}>
-      <Nav />
+      <Nav  type = "profile" onPress = {() => this.props.navigator.replace({id:'home'})} />
       <ScrollView style={styles.container}>
       <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:350, width:width}} />
        <View style={[styles.row, {marginTop:15}]}>
@@ -65,6 +65,14 @@ export default class Profile extends Component {
        <ScrollView
        horizontal = {true}
        >
+       <View style ={{}}>
+             <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
+             <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
+       </View>
+       <View style ={{}}>
+             <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
+             <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
+       </View>
        <View style ={{}}>
              <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
              <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
