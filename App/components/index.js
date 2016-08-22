@@ -17,6 +17,7 @@ import {
 
 import Home from './home';
 import Messages from './messages';
+import Profile from './profile';
 
 
 
@@ -37,7 +38,6 @@ export default class Index extends Component {
         <Home
         {...this.props} 
         userData ={route.userData}
-        close = {() => this.closeControlPanel()}
         navigator={navigator} />
         );
     }
@@ -46,7 +46,14 @@ export default class Index extends Component {
         <Messages
         {...this.props} 
         userData ={route.userData}
-        close = {() => this.closeControlPanel()}
+        navigator={navigator} />
+        );
+    }
+    if (routeId === 'profile') {
+      return (
+        <Profile
+        {...this.props} 
+        userData ={route.userData}
         navigator={navigator} />
         );
     }
@@ -59,7 +66,7 @@ export default class Index extends Component {
      <Navigator
      style={{flex: 1}}
      ref={'NAV'}
-     initialRoute={{id: 'messages', name: 'messages'}}
+     initialRoute={{id: 'profile', name: 'profile'}}
      renderScene={this.renderScene.bind(this)}/>
         </View>
     )
