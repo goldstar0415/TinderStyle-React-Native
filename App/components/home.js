@@ -120,7 +120,7 @@ this.refs['swiper']._goToNextCard()  }
   render() {
     return (
       <View style={styles.container}>
-           <Nav />
+           <Nav chat = {() => this.props.navigator.replace({id: "messages"})} toProfile = {() => this.props.navigator.replace({id:'profile'})} />
       <SwipeCards
         ref = {'swiper'}
         cards={this.state.cards}
